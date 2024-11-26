@@ -16,6 +16,8 @@ def delete_spams(n):
         click_block()
         click_block_confirm()
         click_next()  # Might not work the last time.
+        pyautogui.moveTo(10, 10, duration=0.5)
+
 
 
 def click_next():
@@ -39,8 +41,13 @@ def click_block_confirm():
 
 
 def click_button(button_name, ext="png", duration=0.5):
-    pyautogui.moveTo(f"assets/{button_name}_button.{ext}", duration=duration)
-    pyautogui.click(interval=0.1)
+    while True:
+        try:
+            pyautogui.moveTo(f"assets/{button_name}_button.{ext}", duration=duration)
+            pyautogui.click(interval=0.1)
+            break
+        except pyautogui.ImageNotFoundException:
+            print(f"Failing due to minor error {button_name}...")
 
 
 if __name__ == "__main__":
