@@ -12,8 +12,8 @@ def main():
 
 def delete_spams(n):
     """Loops and blocks by calling necessary functions"""
-    for _ in range(n):
-        click_next()
+    for i in range(n):
+        i and click_next()
         click_menu()
         click_block()
         click_block_confirm()
