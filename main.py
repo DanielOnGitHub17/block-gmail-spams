@@ -3,21 +3,21 @@ import pyautogui
 
 
 def main():
-    """If function ran as script. Will start/error when the user hits enter"""
+    """Code starts running from here
+    If file ran as script. Will start/error when the user hits enter"""
     print("Please open the spam gmails window/tab for the app to work")
     n_spams = int(input("How many spam emails do you want deleted? "))
     delete_spams(n_spams)
 
 
 def delete_spams(n):
-    """Code starts running from here"""
+    """Loops and blocks by calling necessary functions"""
     for _ in range(n):
+        click_next()
         click_menu()
         click_block()
         click_block_confirm()
-        click_next()  # Might not work the last time.
         pyautogui.moveTo(10, 10, duration=0.5)
-
 
 
 def click_next():
