@@ -22,7 +22,4 @@ FUNCTIONS
         Code starts running from here
 
     main()
-        If function ran as script. Will start/error when the user hits 
-enter
-
-FILE
+        If function ran as script. Will start/error when the user hits enter
