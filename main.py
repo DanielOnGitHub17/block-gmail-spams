@@ -13,7 +13,8 @@ def main():
 def delete_spams(n):
     """Loops and blocks by calling necessary functions"""
     for i in range(n):
-        i and click_next()
+        if i:
+            click_next()
         click_menu()
         click_block()
         click_block_confirm()
@@ -41,6 +42,7 @@ def click_block_confirm():
 
 
 def click_button(button_name, ext="png", duration=0.5):
+    """Function to click a button given image name"""
     while True:
         try:
             pyautogui.moveTo(f"assets/{button_name}_button.{ext}", duration=duration)
