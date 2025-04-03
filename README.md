@@ -15,7 +15,7 @@ This tool uses PyAutoGUI to automate the process of blocking spam email senders 
 
 1. Clone this repository:
     ```
-    git clone https://github.com/your-username/block-gmail-spams.git
+    git clone https://github.com/DanielOnGitHub17/block-gmail-spams.git
     cd block-gmail-spams
     ```
 
