@@ -46,7 +46,8 @@ def record_button_position(button_name):
     dialog.lift()  # Bring window to front
     dialog.focus_force()  # Force focus
     
-    label = ttk.Label(dialog, text=f"Position your cursor over the '{button_name}' button\nthen press Enter to record.")
+    label = ttk.Label(dialog, text=f"Position your cursor over the '{button_name}' button\n"\
+                                    "Then press Enter to record and close this dialog")
     label.pack(pady=20)
     
     # Array to store coordinates
@@ -75,14 +76,16 @@ def main():
     # Dictionary to store coordinates
     coords = {}
     
-    # Greeting message
-    print("Welcome to the button coordinate recorder!")
-    print("You will be guided to record the position of each button.")
+    # Show welcome message in a dialog box
+    messagebox.showinfo(
+        "Welcome", 
+        "Welcome to the button coordinate recorder!\n"
+        "Have the Gmail spam blocking window/tab open and visible on your screen.\n"
+        "You will be guided to record the position of each button.\n"
+    )
     
     # Record coordinates for each button
     for button_name in button_names:
-        # Wait 4 seconds before recording each button to allow user to prepare
-        time.sleep(4)
         coords[button_name] = record_button_position(button_name)
         print(f"Recorded '{button_name}' button at coordinates: {coords[button_name]}")
     
@@ -96,6 +99,12 @@ def main():
     with open(coords_file, "w") as f:
         json.dump(coords, f, indent=4)
     
+    messagebox.showinfo(
+        "Setup Complete", 
+        "Thank you for completing the setup!\n"
+        "All button coordinates have been successfully recorded.\n"
+        "You can now proceed to run click_button_coords.py to automate spam blocking."
+    )
     print(f"\nAll coordinates saved to {coords_file}")
     print("Recorded button coordinates:")
     for button_name, coordinates in coords.items():

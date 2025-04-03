@@ -92,7 +92,8 @@ class BlockGmailSpamsApp:
         # Instructions
         ttk.Label(
             main_frame, 
-            text="Please open the spam gmails window/tab first",
+            text="Please open the spam gmails window/tab first\n"
+                 "(move pointer to screen edge to stop automation)",
             wraplength=350,
             font=("Arial", 10, "bold")
         ).pack(pady=(0, 15))
